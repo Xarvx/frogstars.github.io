@@ -41,7 +41,8 @@ const allowedEmailProviders = [
     'tutanota.com',
     'yandex.com',
     'zoho.com',
-    'aol.com'
+    'aol.com',
+    'proton.me'
 ];
 
 // DOM Elements
