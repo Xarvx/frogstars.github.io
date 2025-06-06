@@ -3,9 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frog Stars</title>
+    <title>Registro - FrogStars</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <p>Hola</p>
+    <div class="container">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="registration-card">
+            <div class="card-header">
+                <div class="logo">
+                    <i class="fas fa-frog"></i>
+                    <h1>FrogStars</h1>
+                </div>
+                <p class="subtitle">Únete a nuestra comunidad</p>
+            </div>
+
+            <form id="registrationForm" class="registration-form">
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <label for="fullName">Nombre completo</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <div class="error-message" id="fullNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Correo electrónico</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <div class="error-message" id="emailError"></div>
+                    <div class="success-message" id="emailSuccess"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" required>
+                        <label for="password">Contraseña</label>
+                        <span class="input-highlight"></span>
+                        <button type="button" class="password-toggle" id="passwordToggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar">
+                            <div class="strength-fill"></div>
+                        </div>
+                        <span class="strength-text">Fortaleza de contraseña</span>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <label for="confirmPassword">Confirmar contraseña</label>
+                        <span class="input-highlight"></span>
+                        <button type="button" class="password-toggle" id="confirmPasswordToggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                    <div class="success-message" id="confirmPasswordSuccess"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms" class="checkbox-label">
+                            <span class="checkmark"></span>
+                            Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+                        </label>
+                    </div>
+                    <div class="error-message" id="termsError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter" class="checkbox-label">
+                            <span class="checkmark"></span>
+                            Quiero recibir noticias y actualizaciones
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Crear cuenta</span>
+                    <div class="btn-loader" id="btnLoader">
+                        <div class="spinner"></div>
+                    </div>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>o</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn google-btn" id="googleLogin">
+                    <i class="fab fa-google"></i>
+                    Continuar con Google
+                </button>
+            </div>
+
+            <div class="login-link">
+                <p>¿Ya tienes cuenta? <a href="#" class="link">Inicia sesión</a></p>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <div class="modal-icon success">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3>¡Cuenta creada exitosamente!</h3>
+                <p>Te hemos enviado un correo de verificación. Por favor, revisa tu bandeja de entrada.</p>
+                <button class="modal-btn" id="modalOkBtn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="JS/app.js"></script>
 </body>
 </html>
